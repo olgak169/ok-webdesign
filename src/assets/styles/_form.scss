@@ -1,0 +1,67 @@
+@import 'variables';
+@import 'base';
+
+.content-contact {
+  p {
+    max-width: 35ch;
+    font-weight: 300;
+    margin-bottom: 3rem;
+  }
+}
+
+.form-container {
+  position: relative;
+  --grid-gap: 1em;
+  --grid-columns: 1;
+  font-size: var(--step-0);
+
+  .btnSubmit {
+    position: absolute;
+    right: 1rem;
+    bottom: 0rem;
+    text-transform: uppercase;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    border: 0.5px solid $white;
+    background-color: rgba($color: #000000, $alpha: 0.2);
+    transform: rotate(18deg);
+    transition: background-color 0.4s ease, transform 0.6s ease-in-out;
+    &:hover {
+      background-color: rgba($color: #000000, $alpha: 0.5);
+      transform: rotate(23deg);
+    }
+  }
+}
+label {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+
+  svg {
+    position: absolute;
+    bottom: -10px;
+    left: 4rem;
+  }
+}
+input {
+  width: 80%;
+}
+input,
+textarea {
+  border-bottom: 0.5px solid currentColor;
+  &:focus {
+    outline: none;
+    // border: none;
+  }
+}
+textarea {
+  width: 100%;
+  height: 1rem;
+  max-height: 150px;
+
+  resize: vertical;
+  padding: var(--space-s) 0;
+}

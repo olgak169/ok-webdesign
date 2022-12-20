@@ -1,0 +1,160 @@
+@import 'variables';
+@import 'base';
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.9s ease;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+}
+
+.content {
+  --grid-gap: 0;
+  --grid-min-size: 375px;
+  padding: 6rem 0 0 0;
+  justify-items: center;
+  align-items: center;
+  position: relative;
+  @include breaks(medium) {
+    --grid-min-size: 460px;
+    --grid-gap: 1rem;
+    padding: 4rem 0 1.2rem 0;
+  }
+
+  @include breaks(large) {
+    --grid-columns: 2;
+    --grid-gap: var(--space-m);
+    padding: 0 0 1.2rem 0;
+
+    justify-items: unset;
+  }
+}
+
+.content-image {
+  svg {
+    max-width: 100%;
+  }
+}
+.content-info {
+  --flex-inline-align: center;
+  --flex-block-align: flex-start;
+  --flex-gap: 0;
+
+  .content-text p {
+    font-weight: 300;
+  }
+  .content-info__lower {
+    display: none;
+  }
+  @include breaks(large) {
+    min-height: 100%;
+    --flex-inline-align: flex-start;
+    --flex-block-align: space-between;
+    .content-info__upper {
+      transition: transform 0.6s ease-out;
+      transform: translateY(-8rem);
+    }
+
+    .content-info__lower {
+      display: block;
+    }
+  }
+}
+
+.content-projects {
+  --grid-gap: 1em;
+  .project {
+    border-radius: 0.2rem;
+    overflow: hidden;
+    border: 0.5px solid $text-light;
+    background-position: center center;
+    background-size: 100% auto;
+    transition: all 0.5s ease-out;
+
+    &:hover {
+      background-size: 110% auto;
+      .project-inner {
+        background-color: rgba($color: #0e1f39, $alpha: 0.1);
+      }
+      p {
+        opacity: 0;
+      }
+    }
+  }
+
+  .project-inner {
+    max-width: 100%;
+    max-height: 100%;
+    min-height: 11rem;
+
+    padding: var(--space-s);
+
+    position: relative;
+    background-color: rgba($color: #0e1f39, $alpha: 0.9);
+    transition: background-color 0.6s ease-in-out;
+
+    p {
+      position: absolute;
+      bottom: 0.5em;
+      font-size: 0.9rem;
+      transition: opacity 0.3s ease;
+    }
+  }
+  @include breaks(large) {
+    --grid-min-size: 14rem;
+    .project-inner {
+      width: 16rem;
+      height: 11rem;
+    }
+  }
+}
+.counter {
+  font-size: var(--step-5);
+  --flex-gap: 0.2rem;
+  --flex-block-align: flex-end;
+  span {
+    line-height: 1;
+  }
+  .svg-container {
+    max-width: 5rem;
+  }
+  svg path {
+    stroke-width: 1;
+    stroke: #fff;
+  }
+}
+.shadow {
+  fill: #000;
+  opacity: 0.25;
+  filter: blur(2px);
+}
+.svg-overflow {
+  overflow: visible;
+}
+.poly {
+  fill: #fff;
+  stroke: #092e53;
+  stroke-width: 1;
+}
+.logo {
+  circle {
+    transition: stroke 0.6s ease-out, fill 0.1s ease;
+  }
+  &:hover g circle {
+    stroke: #dfcece;
+  }
+  &:hover #outer {
+    transform-origin: 50% 50%;
+    animation: rotate 2s 2 ease-out;
+  }
+  &:hover #outer .fill {
+    fill: #dfcece;
+  }
+}
+@keyframes rotate {
+  50% {
+    transform: rotate(-100deg);
+  }
+}
