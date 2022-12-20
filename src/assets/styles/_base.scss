@@ -1,0 +1,166 @@
+@import 'variables';
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 'sverdlovskregular';
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+  // unicode-range: U+000-5FF;
+  src: url('./font/display-font.otf') format('otf'),
+    url('./font/display-font-webfont.woff2') format('woff2'),
+    url('./font/display-font-webfont.woff') format('woff');
+}
+html,
+body {
+  height: 100%;
+}
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: hsl(216, 61%, 14%);
+}
+body {
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  color: $text-light;
+
+  background: linear-gradient(
+      30deg,
+      hsl(216.28, 60.56%, 13.92%) 0%,
+      hsl(216.28, 60.56%, 13.92%) 8.1%,
+      hsl(216.28, 60.56%, 13.92%) 15.5%,
+      hsl(215.45, 62.86%, 13.73%) 22.5%,
+      hsl(213.49, 62.32%, 13.53%) 29%,
+      hsl(213.49, 62.32%, 13.53%) 35.3%,
+      hsl(212.09, 64.18%, 13.14%) 41.2%,
+      hsl(212.09, 64.18%, 13.14%) 47.1%,
+      hsl(209.3, 66.15%, 12.75%) 52.9%,
+      hsl(209.3, 66.15%, 12.75%) 58.8%,
+      hsl(207.91, 68.25%, 12.35%) 64.7%,
+      hsl(207.91, 68.25%, 12.35%) 71%,
+      hsl(205.91, 70.97%, 12.16%) 77.5%,
+      hsl(205.12, 70.49%, 11.96%) 84.5%,
+      hsl(205.12, 70.49%, 11.96%) 91.9%,
+      hsl(205.12, 70.49%, 11.96%) 100%
+    ),
+    linear-gradient(
+      152deg,
+      hsl(180, 60%, 0.98%) 0%,
+      hsla(180, 60%, 0.98%, 0.99) 8.1%,
+      hsla(180, 60%, 0.98%, 0.961) 15.5%,
+      hsla(180, 60%, 0.98%, 0.917) 22.5%,
+      hsla(180, 50%, 0.78%, 0.86) 29%,
+      hsla(180, 50%, 0.78%, 0.793) 35.3%,
+      hsla(180, 50%, 0.78%, 0.718) 41.2%,
+      hsla(180, 33.33%, 0.59%, 0.64) 47.1%,
+      hsla(180, 100%, 0.39%, 0.56) 52.9%,
+      hsla(180, 100%, 0.2%, 0.482) 58.8%,
+      hsla(180, 100%, 0.2%, 0.407) 64.7%,
+      hsla(180, 100%, 0.2%, 0.34) 71%,
+      hsla(0, 0%, 0%, 0.283) 77.5%,
+      hsla(0, 0%, 0%, 0.239) 84.5%,
+      hsla(0, 0%, 0%, 0.21) 91.9%,
+      hsla(0, 0%, 0%, 0.2) 100%
+    );
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+img,
+svg {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  display: block;
+}
+button {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a,
+button,
+input,
+textarea {
+  color: inherit;
+  font-family: inherit;
+  border: none;
+  background: transparent;
+  font-size: inherit;
+}
+ul {
+  list-style: none;
+}
+h1 {
+  font-size: var(--step-6);
+  line-height: 1;
+  text-align: left;
+}
+p {
+  font-size: var(--step-0);
+  font-weight: 400;
+  max-width: 50ch;
+}
+.type-display {
+  font-family: 'Sverdlovsk', sans-serif;
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
+}
+
+.container {
+  position: relative;
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0 var(--space-m);
+  height: 100%;
+  @include breaks(large) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(
+    var(--grid-columns, auto-fill),
+    minmax(var(--grid-min-size, 16rem), 1fr)
+  );
+  gap: var(--grid-gap, var(--space-s));
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--flex-gap, var(--space-s));
+  justify-content: var(--flex-inline-align, flex-start);
+  align-items: var(--flex-block-align, center);
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--flex-gap, var(--space-s));
+  justify-content: var(--flex-block-align, flex-start);
+  align-items: var(--flex-inline-align, center);
+}
