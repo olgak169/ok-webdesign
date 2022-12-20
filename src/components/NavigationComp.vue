@@ -47,7 +47,7 @@
       menuOpen.value = true
     } else {
       mobileMenu.value = true
-      menuOpen.value = true
+      // menuOpen.value = true
     }
   }
 
