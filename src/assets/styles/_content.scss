@@ -32,17 +32,12 @@
   }
 }
 
-.content-image {
-  svg {
-    max-width: 100%;
-  }
-}
 .content-info {
   --flex-inline-align: center;
   --flex-block-align: flex-start;
   --flex-gap: 0;
 
-  .content-text p {
+  p {
     font-weight: 300;
   }
   .content-info__lower {
@@ -111,19 +106,7 @@
   }
 }
 .counter {
-  font-size: var(--step-5);
-  --flex-gap: 0.2rem;
-  --flex-block-align: flex-end;
-  span {
-    line-height: 1;
-  }
-  .svg-container {
-    max-width: 5rem;
-  }
-  svg path {
-    stroke-width: 1;
-    stroke: #fff;
-  }
+  opacity: 0.4;
 }
 .shadow {
   fill: #000;
@@ -143,14 +126,14 @@
     transition: stroke 0.6s ease-out, fill 0.1s ease;
   }
   &:hover g circle {
-    stroke: #dfcece;
+    stroke: $text-light;
   }
   &:hover #outer {
     transform-origin: 50% 50%;
     animation: rotate 2s 2 ease-out;
   }
   &:hover #outer .fill {
-    fill: #dfcece;
+    fill: $text-light;
   }
 }
 @keyframes rotate {

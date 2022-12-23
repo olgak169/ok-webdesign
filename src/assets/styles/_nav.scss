@@ -7,13 +7,32 @@
     --flex-block-align: flex-start;
   }
 }
-// .logo {
-//   grid-area: logo;
-//   justify-self: flex-start;
-//   align-self: flex-end;
-// }
+
 .nav-btns {
   z-index: 30;
+  cursor: pointer;
+  width: 5rem;
+  &.sticky {
+    position: fixed;
+    right: 1rem;
+  }
+
+  #b-line,
+  #t-line,
+  #close {
+    transition: transform 0.4s ease-out;
+  }
+
+  #b-line {
+    transform: translateX(9%) translateY(-20%);
+  }
+  #t-line {
+    transform: translateX(-10%) translateY(20%);
+  }
+  svg.menu-open #t-line,
+  svg.menu-open #b-line {
+    transform: translateX(0) translateY(0);
+  }
 }
 .mobile-nav {
   position: fixed;
@@ -21,9 +40,13 @@
   top: 0%;
   z-index: 20;
   height: 100%;
+  width: 100%;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   background-color: hsla(216, 61%, 10%, 0.7);
+  &.main-nav {
+    max-width: 100%;
+  }
   ul {
     --flow-space: 2em;
     padding: 12rem 1rem 0 1rem;
@@ -51,9 +74,9 @@
     }
   }
   &:hover {
-    color: #fff;
+    color: $white;
     svg path {
-      stroke: #fff;
+      stroke: $white;
     }
   }
 }

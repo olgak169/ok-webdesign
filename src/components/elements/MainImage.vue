@@ -344,12 +344,12 @@
 <script setup>
   import { gsap } from 'gsap'
   import { MotionPathPlugin } from 'gsap/MotionPathPlugin.js'
-  import { onBeforeUnmount, onMounted, ref } from 'vue'
+  import { onBeforeMount, onBeforeUnmount, onMounted, ref } from 'vue'
 
   gsap.registerPlugin(MotionPathPlugin)
 
   const tl1 = gsap.timeline({ repeat: -1, repeatDelay: 3, paused: false })
-  const tl = gsap.timeline({ delay: 2 })
+  const tl = gsap.timeline({ delay: 2, repeat: -1, repeatDelay: 3, paused: true })
 
   function wingMotion() {
     const wings = gsap.utils.toArray(['#wing01', '#wing02', '#wing03', '#wing04'])
@@ -383,15 +383,51 @@
     })
   }
   function frogJump02() {
-    tl.add('l3', 1).add('l4', 1.1).add('l5', 2)
+    tl.removePause()
+    tl.play()
+  }
+  function frogJump01() {
+    tl.add('l1', 0).add('l2', 0.1)
+    tl.add('l3', 1.2).add('l4', 1.3).add('l5', 2.2)
 
+    tl.to(
+      '#frog',
+      {
+        motionPath: {
+          path: [
+            { x: 300, y: -220 },
+            { x: 0, y: 0 },
+          ],
+        },
+        ease: 'sine.in',
+        duration: 0.9,
+      },
+      'l1'
+    ).addPause(1.2)
+
+    tl.to(
+      '#frog',
+      {
+        rotation: -20,
+        yoyo: true,
+        repeat: 1,
+        duration: 0.5,
+        ease: '"slow(0.1, 0.4, false)"',
+      },
+      'l1'
+    )
+    tl.to('#frontLeg', { rotation: 40, repeat: 1, yoyo: true }, 'l2')
+    tl.to('#backLeg', { rotation: -150, repeat: 1, yoyo: true }, 'l2')
+    tl.to('#backLowerLeg', { rotation: 180, repeat: 1, yoyo: true }, 'l2')
+    tl.to('#foot', { rotation: -170, repeat: 1, yoyo: true }, 'l2')
+    // Second part of the jump
     tl.to(
       '#frog',
       {
         motionPath: {
           path: '#jump-path',
           align: '#jump-path',
-          alignOrigin: [0, 0],
+          alignOrigin: [0.5, 0.7],
           start: 1,
           end: 0,
         },
@@ -418,48 +454,18 @@
 
     tl.to(
       ['#splash01', '#splash02', '#splash03'],
-      { scale: 1.1, opacity: 0, stagger: 0.6, duration: 4 },
+      { scale: 1.1, opacity: 0, stagger: 0.6, duration: 4, ease: 'power1.out' },
       'l5'
     )
   }
-  function frogJump01() {
-    tl.add('l1', 0).add('l2', 0.1)
 
-    tl.from(
-      '#frog',
-      {
-        motionPath: {
-          path: [
-            { x: 300, y: -220 },
-            { x: 0, y: 0 },
-          ],
-        },
-        duration: 0.9,
-      },
-      'l1'
-    )
-
-    tl.to(
-      '#frog',
-      {
-        rotation: -20,
-        yoyo: true,
-        repeat: 1,
-        duration: 0.6,
-        ease: 'back.inOut',
-      },
-      'l1'
-    )
-    tl.to('#frontLeg', { rotation: 40, repeat: 1, yoyo: true }, 'l2')
-    tl.to('#backLeg', { rotation: -150, repeat: 1, yoyo: true }, 'l2')
-    tl.to('#backLowerLeg', { rotation: 180, repeat: 1, yoyo: true }, 'l2')
-    tl.to('#foot', { rotation: -170, repeat: 1, yoyo: true }, 'l2')
-  }
   onMounted(() => {
     gsap.set(['#splash01', '#splash02', '#splash03'], {
       scale: 0,
       transformOrigin: '50% 50%',
     })
+
+    gsap.set('#frog', { x: 300, y: -220 })
 
     gsap.set('#body-group', { transformOrigin: '50% 59%', rotation: -0 })
     gsap.set('#frontLeg', { transformOrigin: '75% 10%', rotation: -0 })
@@ -467,8 +473,11 @@
     gsap.set('#backLowerLeg', { transformOrigin: '25% 30%', rotation: -0 })
     gsap.set('#foot', { transformOrigin: '85% 20%', rotation: -0 })
     gsap.set('#footFront', { transformOrigin: '85% 30%', rotation: -0 })
+
     wingMotion()
     frogJump01()
+
+    tl.play()
   })
 
   onBeforeUnmount(() => {

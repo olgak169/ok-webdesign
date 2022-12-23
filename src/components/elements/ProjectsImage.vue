@@ -488,46 +488,20 @@
   import { onBeforeUnmount, onMounted, ref } from 'vue'
 
   const polies = ref(null)
-  const firstGroup = ref(null)
-  const secondGroup = ref(null)
 
-  const getOne = () => {
-    let workingPolies = gsap.utils.shuffle(polies.value)
-
-    let first = workingPolies.slice(0, 10)
-    let second = workingPolies.slice(9, -1)
-
-    firstGroup.value = first
-    secondGroup.value = second
-    return { first, second }
-    // console.log(secondGroup.value)
-  }
-
-  const anim = first => {
-    // let { first, second } = getOne()
-    // let tl = gsap.timeline()
-    // tl.set(polies.value, { transformOrigin: '50% 50%', scale: 0.2, rotate: 0 })
-    // let workingPolies = gsap.utils.shuffle(polies.value)
-
-    // let first = workingPolies.slice(0, 10)
-    // let second = workingPolies.slice(9, -1)
-    // return { first, second }
-
-    // firstGroup.value = workingPolies.slice(0, 10)
-    // secondGroup.value = workingPolies.slice(9, -1)
-
-    tl.to(first || polies.value.slice(0, 10), {
+  const anim = () => {
+    tl.to(polies.value, {
       rotate: 30,
-      duration: 1.5,
+      duration: 2.5,
       repeat: 1,
       yoyo: true,
     })
     tl.to(
-      first || polies.value.slice(0, 10),
+      gsap.utils.shuffle(polies.value).slice(0, 10),
       {
-        stagger: 0.1,
+        stagger: 0.3,
         scale: 1,
-        duration: 3,
+        duration: 5,
         repeat: 1,
         yoyo: true,
       },
@@ -539,23 +513,15 @@
     paused: true,
     repeat: -1,
     onRepeat: anim,
-    onRepeatParams: () => {
-      let { first, second } = getOne()
-      return first
-    },
   })
 
   onMounted(() => {
     gsap.set('.poly', { transformOrigin: '50% 50%', scale: 0.2, rotate: 0 })
     polies.value = gsap.utils.toArray('.poly')
-    // getOne()
-
-    // anim()
 
     tl.play()
   })
   onBeforeUnmount(() => {
-    // tl.revert()
+    tl.revert()
   })
 </script>
-<style scoped></style>

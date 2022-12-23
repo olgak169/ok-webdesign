@@ -1,13 +1,13 @@
 @import 'variables';
 @import 'base';
 
-.content-contact {
-  p {
-    max-width: 35ch;
-    font-weight: 300;
-    margin-bottom: 3rem;
-  }
-}
+// .content-contact {
+//   p {
+//     max-width: 35ch;
+//     font-weight: 300;
+//     margin-bottom: 3rem;
+//   }
+// }
 
 .form-container {
   position: relative;
@@ -54,7 +54,7 @@ textarea {
   border-bottom: 0.5px solid currentColor;
   &:focus {
     outline: none;
-    // border: none;
+    border-bottom: 1px solid currentColor;
   }
 }
 textarea {

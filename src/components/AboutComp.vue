@@ -9,11 +9,9 @@
       libraries like GSAP, AnimeJs and MotionOne.
     </p>
     <p>
-      I have some experience with backend development using NodeJs and Express as well as
-      MySQL, Postgres and Firebase.
+      I have some experience with backend development using NodeJs, Express and databases
+      like MySQL, Postgres and Firebase.
     </p>
-    <p>For project design I use Illustrator, Photoshop and Figma.</p>
+    <p>For project design I use Figma and of course some Illustrator or Photoshop.</p>
   </div>
 </template>
-<script setup></script>
-<style scoped></style>

@@ -1,8 +1,13 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 601 81" width="600" id="counter">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 601 81"
+    width="600"
+    class="counter"
+  >
     <title>counter-element</title>
 
-    <g id="Layer_2" data-name="Layer 2">
+    <g>
       <path
         d="M80,40A30,30,0,1,1,50,10,30,30,0,0,1,80,40ZM69.2,20.81C58,9.65,40.4,9.19,29.8,19.8S19.64,48,30.8,59.2s28.8,11.61,39.4,1S80.35,32,69.2,20.81Z"
         fill="#dfcece"
@@ -98,6 +103,7 @@
   onMounted(() => {
     gsap.set('.nums path:not(#_1)', { opacity: 0 })
     gsap.set('.symbols g:not(#symbol-main)', { opacity: 0 })
+    gsap.set('.symbols g', { x: -65, scale: 0.9, transformOrigin: '50% 50%' })
   })
 
   watch(
@@ -124,8 +130,3 @@
     }
   )
 </script>
-<style>
-  #counter {
-    opacity: 0.6;
-  }
-</style>

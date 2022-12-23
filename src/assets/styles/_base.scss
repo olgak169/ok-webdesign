@@ -12,9 +12,9 @@
   font-style: normal;
   font-display: auto;
   // unicode-range: U+000-5FF;
-  src: url('./font/display-font.otf') format('otf'),
-    url('./font/display-font-webfont.woff2') format('woff2'),
-    url('./font/display-font-webfont.woff') format('woff');
+  src: url('~@/assets/fonts/display-font.otf') format('otf'),
+    url('~@/assets/fonts/display-font-webfont.woff2') format('woff2'),
+    url('~@/assets/fonts/display-font-webfont.woff') format('woff');
 }
 html,
 body {
@@ -99,6 +99,7 @@ textarea {
   border: none;
   background: transparent;
   font-size: inherit;
+  outline: none;
 }
 ul {
   list-style: none;
@@ -115,6 +116,7 @@ p {
 }
 .type-display {
   font-family: 'Sverdlovsk', sans-serif;
+  letter-spacing: 2px;
 }
 
 .sr-only:not(:focus):not(:active) {
