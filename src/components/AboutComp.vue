@@ -12,6 +12,9 @@
       I have some experience with backend development using NodeJs, Express and databases
       like MySQL, Postgres and Firebase.
     </p>
-    <p>For project design I use Figma and of course some Illustrator or Photoshop.</p>
+    <p>
+      For project design I use Figma and for some projects Illustrator or Photoshop as
+      well.
+    </p>
   </div>
 </template>

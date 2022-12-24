@@ -8,23 +8,28 @@
 }
 @font-face {
   font-family: 'sverdlovskregular';
-  font-weight: 400;
+  font-weight: normal;
   font-style: normal;
   font-display: auto;
+
   // unicode-range: U+000-5FF;
-  src: url('~@/assets/fonts/display-font.otf') format('otf'),
-    url('~@/assets/fonts/display-font-webfont.woff2') format('woff2'),
-    url('~@/assets/fonts/display-font-webfont.woff') format('woff');
+  src: url('~@/assets/fonts/sverdlovsk.otf') format('otf'),
+    url('~@/assets/fonts/sverdlovsk-webfont.eot?#iefix') format('embedded-opentype'),
+    url('~@/assets/fonts/sverdlovsk-webfont.woff2') format('woff2'),
+    url('~@/assets/fonts/sverdlovsk-webfont.woff') format('woff'),
+    url('~@/assets/fonts/sverdlovsk-webfont.svg#sverdlovskregular') format('svg');
 }
 html,
 body {
   height: 100%;
 }
 html {
+  font-synthesis: none;
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
   background-color: hsl(216, 61%, 14%);
 }
 body {
@@ -105,6 +110,7 @@ ul {
   list-style: none;
 }
 h1 {
+  font-family: 'sverdlovsk', sans-serif;
   font-size: var(--step-6);
   line-height: 1;
   text-align: left;
@@ -115,7 +121,7 @@ p {
   max-width: 50ch;
 }
 .type-display {
-  font-family: 'Sverdlovsk', sans-serif;
+  font-family: 'sverdlovsk', sans-serif;
   letter-spacing: 2px;
 }
 

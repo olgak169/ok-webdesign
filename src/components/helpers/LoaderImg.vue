@@ -1,8 +1,8 @@
 <template>
   <div class="loader-img">
     <svg
-      width="500"
-      height="500"
+      width="600"
+      height="100%"
       viewBox="0 0 500 500"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

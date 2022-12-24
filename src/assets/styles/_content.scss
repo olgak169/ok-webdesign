@@ -122,6 +122,7 @@
   stroke-width: 1;
 }
 .logo {
+  overflow: visible;
   circle {
     transition: stroke 0.6s ease-out, fill 0.1s ease;
   }
