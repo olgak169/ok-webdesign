@@ -103,14 +103,3 @@
     }
   }
 </script>
-<style scoped>
-  .error {
-    color: #900;
-  }
-  .green {
-    color: green;
-  }
-  .pending {
-    font-size: 2.5rem;
-  }
-</style>
