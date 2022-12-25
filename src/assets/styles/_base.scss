@@ -6,25 +6,12 @@
   padding: 0;
   box-sizing: border-box;
 }
-@font-face {
-  font-family: 'sverdlovskregular';
-  font-weight: normal;
-  font-style: normal;
-  font-display: auto;
 
-  // unicode-range: U+000-5FF;
-  src: url('~@/assets/fonts/sverdlovsk.otf') format('otf'),
-    url('~@/assets/fonts/sverdlovsk-webfont.eot?#iefix') format('embedded-opentype'),
-    url('~@/assets/fonts/sverdlovsk-webfont.woff2') format('woff2'),
-    url('~@/assets/fonts/sverdlovsk-webfont.woff') format('woff'),
-    url('~@/assets/fonts/sverdlovsk-webfont.svg#sverdlovskregular') format('svg');
-}
 html,
 body {
   height: 100%;
 }
 html {
-  font-synthesis: none;
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -102,6 +89,7 @@ textarea {
   color: inherit;
   font-family: inherit;
   border: none;
+  border-radius: 0;
   background: transparent;
   font-size: inherit;
   outline: none;
@@ -110,14 +98,13 @@ ul {
   list-style: none;
 }
 h1 {
-  font-family: 'sverdlovsk', sans-serif;
   font-size: var(--step-6);
   line-height: 1;
   text-align: left;
 }
 p {
   font-size: var(--step-0);
-  font-weight: 400;
+  font-weight: 300;
   max-width: 50ch;
 }
 .type-display {
