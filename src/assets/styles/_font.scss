@@ -5,9 +5,5 @@
   font-display: swap;
 
   unicode-range: U+000-5FF;
-  src: local('Sverdlovsk'), url('./fonts/sverdlovsk.otf') format('opentype'),
-    url('./fonts/sverdlovsk.eot?#iefix') format('embedded-opentype'),
-    url('./fonts/sverdlovsk.woff2') format('woff2'),
-    url('./fonts/sverdlovsk.woff') format('woff'),
-    url('./fonts/sverdlovsk.svg#sverdlovskregular') format('svg');
+  src: url('./fonts/sverdlovsk.woff2') format('woff2');
 }
