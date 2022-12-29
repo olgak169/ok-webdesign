@@ -1,9 +1,10 @@
 @font-face {
   font-family: 'Sverdlovsk';
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 
   unicode-range: U+000-5FF;
-  src: url('../fonts/sverdlovsk.woff2') format('woff2');
+  src: url('../fonts/sverdlovsk.woff2') format('woff2'),
+    url('../fonts/sverdlovsk.woff') format('woff');
 }
