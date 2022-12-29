@@ -1,6 +1,8 @@
 import { createApp } from 'vue'
 import './assets/styles/main.scss'
-import './assets/styles/font.css'
 import App from './App.vue'
+
+import './assets/fonts/sverdlovsk.woff'
+import './assets/fonts/sverdlovsk.woff2'
 
 createApp(App).mount('body')

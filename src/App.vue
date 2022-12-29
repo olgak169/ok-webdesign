@@ -54,17 +54,3 @@
     contact: asyncImg('Contact'),
   }
 </script>
-<style>
-  @font-face {
-    font-family: 'sverdlovsk';
-    font-weight: normal;
-    font-style: normal;
-
-    unicode-range: U+000-5FF;
-    src: local('sverdlovsk'), url('./fonts/sverdlovsk.otf') format('opentype'),
-      url('./fonts/sverdlovsk-webfont.eot?#iefix') format('embedded-opentype'),
-      url('./fonts/sverdlovsk-webfont.woff2') format('woff2'),
-      url('./fonts/sverdlovsk-webfont.woff') format('woff'),
-      url('./fonts/sverdlovsk-webfont.svg#sverdlovskregular') format('svg');
-  }
-</style>

@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Sverdlovsk';
+  font-weight: normal;
+  font-style: normal;
+
+  unicode-range: U+000-5FF;
+  src: local('Sverdlovsk'), url('~@assets/fonts/sverdlovsk.otf') format('opentype'),
+    url('~@assets/fonts/sverdlovsk.eot?#iefix') format('embedded-opentype'),
+    url('~@assets/fonts/sverdlovsk.woff2') format('woff2'),
+    url('~@assets/fonts/sverdlovsk.woff') format('woff'),
+    url('~@assets/fonts/sverdlovsk.svg#sverdlovskregular') format('svg');
+}

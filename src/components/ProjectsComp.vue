@@ -30,7 +30,7 @@
       link: 'https://olgak169.github.io/FMSpace/',
     },
     {
-      img: './img/pr-iptrack.png',
+      img: './img/pr-iptrack.jpg',
       desc: 'IP tracker.',
       link: 'https://olgak169.github.io/FMSpace/',
     },
