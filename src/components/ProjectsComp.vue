@@ -32,12 +32,12 @@
     {
       img: './img/pr-iptrack.jpg',
       desc: 'IP tracker.',
-      link: 'https://olgak169.github.io/FMSpace/',
+      link: 'https://olgak169.github.io/FMIPAddressTracker/',
     },
     {
       img: './img/pr-countryapi.png',
       desc: 'Country statistics.',
-      link: 'https://olgak169.github.io/FMSpace/',
+      link: 'https://olgak169.github.io/FMCountriesAPI/',
     },
   ]
 </script>
